@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" prefHeight="483.0" prefWidth="653.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="quesos.QuesosFXMLController">
+   <children>
+      <TabPane layoutX="14.0" layoutY="14.0" prefHeight="458.0" prefWidth="627.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Main Menu">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="343.0" prefWidth="627.0">
+                     <children>
+                        <TextArea fx:id="mainMenuTxtArea" layoutX="314.0" layoutY="14.0" prefHeight="403.0" prefWidth="297.0" />
+                        <ListView fx:id="mainMenuList" layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" />
+                        <Button fx:id="mainMenuRemoveButton" layoutX="85.0" layoutY="224.0" mnemonicParsing="false" onAction="#handlerMainMenuRemoveButton" text="Remove" />
+                        <Button fx:id="mainMenuCalcularButton" layoutX="39.0" layoutY="322.0" mnemonicParsing="false" onAction="#handlerMainMenuCalcularButton" text="Calcular Total Recaudado" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Facturación">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="facturacionList" layoutX="14.0" layoutY="14.0" prefHeight="367.0" prefWidth="200.0" />
+                        <Button fx:id="facturacionRemoveButton" layoutX="14.0" layoutY="390.0" mnemonicParsing="false" onAction="#handlerFacturacionRemoveButton" text="Remove" />
+                        <Button fx:id="facturacionPButton" layoutX="189.0" layoutY="390.0" mnemonicParsing="false" onAction="#handlerFacturacionPButton" text="+" />
+                        <Button fx:id="facturacionMButton" layoutX="157.0" layoutY="390.0" mnemonicParsing="false" onAction="#handlerFacturacionMButton" prefHeight="25.0" prefWidth="25.0" text="-" />
+                        <ChoiceBox fx:id="facturacionFacturasOptions" layoutX="221.0" layoutY="14.0" prefWidth="150.0" />
+                        <Label layoutX="221.0" layoutY="40.0" text="ID:" />
+                        <Label fx:id="facturacionIDLabel" layoutX="242.0" layoutY="40.0" prefHeight="17.0" prefWidth="129.0" />
+                        <AnchorPane layoutX="413.0" layoutY="181.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: lightgray;">
+                           <children>
+                              <VBox fx:id="FacturacionQuesoEsfBox" alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="173.0" prefWidth="173.0" spacing="20.0" visible="false" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                 <children>
+                                    <TextField fx:id="facturacionQuesoEsfRadioTxt" alignment="CENTER" promptText="Radio" />
+                                 </children>
+                              </VBox>
+                              <VBox fx:id="FacturacionQuesoCilBox" alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="173.0" prefWidth="173.0" spacing="20.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                 <children>
+                                    <TextField fx:id="facturacionQuesoCilRadioTxt" promptText="Radio" />
+                                    <TextField fx:id="facturacionQuesoCilLongitudTxt" promptText="Longitud" />
+                                 </children>
+                              </VBox>
+                              <VBox fx:id="FacturacionQuesoCilHueBox" alignment="CENTER" layoutX="13.0" layoutY="14.0" prefHeight="173.0" prefWidth="173.0" spacing="20.0" visible="false" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                                 <children>
+                                    <TextField fx:id="facturacionQuesoCilHueRadioTxt" promptText="Radio Externo" />
+                                    <TextField fx:id="facturacionQuesoCilHueLongitudTxt" promptText="Longitud" />
+                                    <TextField fx:id="facturacionQuesoCilHueRadioIntTxt" promptText="Radio Interno" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                        <ChoiceBox fx:id="facturacionQuesosOptions" layoutX="221.0" layoutY="181.0" prefWidth="150.0" />
+                        <ChoiceBox fx:id="facturacionClientesOptions" layoutX="221.0" layoutY="64.0" prefWidth="150.0" />
+                        <Button fx:id="facturacionAddButton" layoutX="295.0" layoutY="369.0" mnemonicParsing="false" onAction="#handlerFacturacionAddButton" text="Add" />
+                        <TextField fx:id="facturacionQuesoPrecioBaseTxt" layoutX="222.0" layoutY="235.0" promptText="Precio Base" />
+                        <TextField fx:id="facturacionQuesoPrecioUnitarioTxt" layoutX="222.0" layoutY="281.0" promptText="Precio Unitario" />
+                        <TextField fx:id="facturacionQuesosCantTxt" layoutX="222.0" layoutY="325.0" promptText="Cantidad" />
+                        <Label layoutX="221.0" layoutY="97.0" text="Nombre:" />
+                        <Label layoutX="221.0" layoutY="122.0" text="Dirección:" />
+                        <Label layoutX="221.0" layoutY="146.0" text="Teléfono:" />
+                        <Label fx:id="facturacionClienteNombreLabel" layoutX="283.0" layoutY="97.0" />
+                        <Label fx:id="facturacionClienteDireccionLabel" layoutX="283.0" layoutY="122.0" />
+                        <Label fx:id="facturacionClienteTelefonoLabel" layoutX="283.0" layoutY="146.0" />
+                        <TextField fx:id="facturacionIDTxt" layoutX="383.0" layoutY="14.0" promptText="ID Nueva Factura" />
+                        <Button fx:id="facturacionNewButton" layoutX="539.0" layoutY="14.0" mnemonicParsing="false" onAction="#handlerFacturacionNewButton" text="New" />
+                        <Button fx:id="facturacionGuardarFacturaButton" layoutX="463.0" layoutY="93.0" mnemonicParsing="false" onAction="#handlerFacturacionGuardarFacturaButton" text="Guardar Factura" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Clientes">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="397.0" prefWidth="627.0">
+                     <children>
+                        <ListView fx:id="clientesList" layoutX="14.0" layoutY="14.0" prefHeight="338.0" prefWidth="200.0" />
+                        <Label layoutX="221.0" layoutY="14.0" text="Nombre:" />
+                        <Label layoutX="221.0" layoutY="38.0" text="Direccion:" />
+                        <Label layoutX="221.0" layoutY="62.0" text="Telefono:" />
+                        <Label fx:id="clientesDireccionLabel" layoutX="286.0" layoutY="38.0" />
+                        <Label fx:id="clientesNombreLabel" layoutX="286.0" layoutY="14.0" />
+                        <Label fx:id="clientesTelefonoLabel" layoutX="286.0" layoutY="62.0" />
+                        <TextField fx:id="clientesNombreTxt" layoutX="221.0" layoutY="166.0" promptText="Nombre" />
+                        <TextField fx:id="clientesDireccionTxt" layoutX="221.0" layoutY="202.0" promptText="Dirección" />
+                        <TextField fx:id="clientesTelefonoTxt" layoutX="221.0" layoutY="238.0" promptText="Teléfono" />
+                        <Button fx:id="clientesAddButton" layoutX="441.0" layoutY="179.0" mnemonicParsing="false" onAction="#handlerClientesAddButton" text="Add" />
+                        <Button fx:id="clientesUpdateButton" layoutX="441.0" layoutY="215.0" mnemonicParsing="false" onAction="#handlerClientesUpdateButton" text="Update" />
+                        <Button fx:id="clientesRemoveButton" layoutX="85.0" layoutY="372.0" mnemonicParsing="false" onAction="#handlerClientesRemoveButton" text="Remove" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
